@@ -87,27 +87,26 @@ def main(arguments):
     modified = False
 
     # check each source layer for a form
-    if source_layers and dest_layers:
-        for s_layer in source_layers:
-            if "formInfo" in s_layer:
-                try:
-                    # find matching layer based on url
-                    dest_layer = next(d_layer for d_layer in dest_layers if d_layer["url"] == s_layer["url"])
-                    if dest_layer:
-                        if args.layer_name is None or args.layer_name == dest_layer["title"]:
-                            dest_layer["formInfo"] = s_layer["formInfo"]
-                            modified = True
-                except Exception:
-                    continue
-    else:
+    if not source_layers or not dest_layers:
         raise ValueError("No layers in one of your maps! Please check again")
-    
+    for s_layer in source_layers:
+        if "formInfo" in s_layer:
+            try:
+                # find matching layer based on url
+                dest_layer = next(d_layer for d_layer in dest_layers if d_layer["url"] == s_layer["url"])
+                if dest_layer:
+                    if args.layer_name is None or args.layer_name == dest_layer["title"]:
+                        dest_layer["formInfo"] = s_layer["formInfo"]
+                        modified = True
+            except Exception:
+                continue
+       
     # Saving form
     if modified:
         logger.info("Saving form(s) to destination map")
         dest_item.update(data=dest_data)
     else:
-        raise ValueError("No matching layers were found! Your destination map was not modified")
+        logger.info("No matching layers were found! Your destination map was not modified")
     logger.info("Completed!")
 
 

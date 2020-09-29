@@ -58,6 +58,19 @@ def initialize_logging(log_file=None):
     return logger
 
 
+def replace_form(source_objects, dest_objects):
+    modified = False
+    for s_layer in source_objects:
+        if "formInfo" in s_layer:
+            # find matching layer based on url
+            dest_layer = next(d_layer for d_layer in dest_objects if d_layer.get("url", None) == s_layer.get("url", None))
+            if dest_layer:
+                if args.layer_name is None or args.layer_name == dest_layer.get("title", None):
+                    dest_layer["formInfo"] = s_layer["formInfo"]
+                    modified = True
+    return modified
+
+
 def main(arguments):
     # initialize logger
     logger = initialize_logging(arguments.log_file)
@@ -81,25 +94,18 @@ def main(arguments):
     
     # Iterate through operational layers
     logger.info("Iterating through layers")
-    source_layers = source_item.get_data()["operationalLayers"]
+    source_layers = source_item.get_data().get("operationalLayers", None)
+    source_tables = source_item.get_data().get("tables", None)
     dest_data = dest_item.get_data()
-    dest_layers = dest_data["operationalLayers"]
-    modified = False
+    dest_layers = dest_data.get("operationalLayers", None)
+    dest_tables = dest_data.get("tables", None)
 
-    # check each source layer for a form
-    if not source_layers or not dest_layers:
-        raise ValueError("No layers in one of your maps! Please check again")
-    for s_layer in source_layers:
-        if "formInfo" in s_layer:
-            # find matching layer based on url
-            dest_layer = next(d_layer for d_layer in dest_layers if d_layer.get("url", None) == s_layer.get("url", None))
-            if dest_layer:
-                if args.layer_name is None or args.layer_name == dest_layer.get("title", None):
-                    dest_layer["formInfo"] = s_layer["formInfo"]
-                    modified = True
+    # Swizzle in new form
+    forms_modified = replace_form(source_layers, dest_layers)
+    tables_modified = replace_form(source_tables, dest_tables)
        
     # Saving form
-    if modified:
+    if forms_modified or tables_modified:
         logger.info("Saving form(s) to destination map")
         dest_item.update(data=dest_data)
     else:

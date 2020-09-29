@@ -24,9 +24,10 @@ In addition to the authentication arguments, the script specific arguments are a
 
 - -source-item-id - The item ID of the map where your form(s) live that you'd like to copy to the same layer in a different map
 - -dest-item-id - The item ID of the map where you want your form to be copied to
-- -layer-name - If you'd like to restrict copying over forms to only certain layers in each map, provide the title of the layer whose form you'd like to copy here(Optional)
+- -layer-name - If you'd like to restrict copying over forms to only certain layers in each map, provide the title of the layer whose form you'd like to copy here (Optional)
+- --overwrite - If you'd like to overwrite existing forms in the destination map using this script, please pass this parameter
 - -log-file - The log file to use for logging messages (Optional)
 
 ```bash
-python copy_form_between_maps.py -org https://arcgis.com -u username -p password -source-map-id d2295f09f97945c9b447417ba27bcb38 -dest-map-id 4392801d9c8341ce9038614ff240e877 -layer-name "Inspections"
+python copy_form_between_maps.py -org https://arcgis.com -u username -p password -source-map-id d2295f09f97945c9b447417ba27bcb38 -dest-map-id 4392801d9c8341ce9038614ff240e877 -layer-name "Inspections" --overwrite
 ```

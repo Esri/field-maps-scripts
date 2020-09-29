@@ -58,16 +58,21 @@ def initialize_logging(log_file=None):
     return logger
 
 
-def replace_form(source_objects, dest_objects):
+def replace_form(source_objects, dest_objects, overwrite=False):
     modified = False
     for s_layer in source_objects:
         if "formInfo" in s_layer:
             # find matching layer based on url
-            dest_layer = next(d_layer for d_layer in dest_objects if d_layer.get("url", None) == s_layer.get("url", None))
-            if dest_layer:
-                if args.layer_name is None or args.layer_name == dest_layer.get("title", None):
-                    dest_layer["formInfo"] = s_layer["formInfo"]
-                    modified = True
+            for d_layer in dest_objects:
+                if d_layer.get("url", None) == s_layer.get("url", None):
+                    # Check it's the correct layer or that no layer name was passed
+                    if args.layer_name is None or args.layer_name == d_layer.get("title", None):
+                        # Check overwrite was provided or there's no existing form
+                        if overwrite or not d_layer.get("formInfo", None):
+                            d_layer["formInfo"] = s_layer["formInfo"]
+                            modified = True
+                        else:
+                            sys.exit("Existing form is detected. Pass --overwrite to the script to overwrite the form")
     return modified
 
 
@@ -94,15 +99,15 @@ def main(arguments):
     
     # Iterate through operational layers
     logger.info("Iterating through layers")
-    source_layers = source_item.get_data().get("operationalLayers", None)
-    source_tables = source_item.get_data().get("tables", None)
+    source_layers = source_item.get_data().get("operationalLayers", [])
+    source_tables = source_item.get_data().get("tables", [])
     dest_data = dest_item.get_data()
-    dest_layers = dest_data.get("operationalLayers", None)
-    dest_tables = dest_data.get("tables", None)
+    dest_layers = dest_data.get("operationalLayers", [])
+    dest_tables = dest_data.get("tables", [])
 
     # Swizzle in new form
-    forms_modified = replace_form(source_layers, dest_layers)
-    tables_modified = replace_form(source_tables, dest_tables)
+    forms_modified = replace_form(source_layers, dest_layers, args.overwrite)
+    tables_modified = replace_form(source_tables, dest_tables, args.overwrite)
        
     # Saving form
     if forms_modified or tables_modified:
@@ -124,6 +129,7 @@ if __name__ == "__main__":
                         required=True)
     parser.add_argument('-dest-map-id', dest='dest', help="The item id of the map you want to copy the form(s) to", required=True)
     parser.add_argument('-layer-name', dest='layer_name', help="An optional specific layer you want to copy. If this is not provided, all matching layers will have their forms copied", required=False)
+    parser.add_argument('--overwrite', dest='overwrite', action='store_true', help="Provide this parameter if you would like to overwrite an existing form")
     parser.add_argument('--skip-ssl-verification',
                         dest='skip_ssl_verification',
                         action='store_true',

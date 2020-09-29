@@ -91,15 +91,12 @@ def main(arguments):
         raise ValueError("No layers in one of your maps! Please check again")
     for s_layer in source_layers:
         if "formInfo" in s_layer:
-            try:
-                # find matching layer based on url
-                dest_layer = next(d_layer for d_layer in dest_layers if d_layer["url"] == s_layer["url"])
-                if dest_layer:
-                    if args.layer_name is None or args.layer_name == dest_layer["title"]:
-                        dest_layer["formInfo"] = s_layer["formInfo"]
-                        modified = True
-            except Exception:
-                continue
+            # find matching layer based on url
+            dest_layer = next(d_layer for d_layer in dest_layers if d_layer.get("url", None) == s_layer.get("url", None))
+            if dest_layer:
+                if args.layer_name is None or args.layer_name == dest_layer.get("title", None):
+                    dest_layer["formInfo"] = s_layer["formInfo"]
+                    modified = True
        
     # Saving form
     if modified:

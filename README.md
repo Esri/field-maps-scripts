@@ -1,10 +1,15 @@
 # Field Maps Scripts
 A set of Python scripts and notebooks to help configure maps and manage data for ArcGIS Field Maps.
 
-### Scripts Available
+### Features
 | Functionality                                                        | Script                                                                            
 |----------------------------------------------------------------------|----------------------------------------------------------------------------------------|
 | [Copy Form Between Maps ](copy_form_between_maps.md)               | [copy_form_between_maps.py](scripts/copy_form_between_maps.py)              |
+
+### Requirements
+- Python 3.6+
+- ArcGIS API for Python 1.8.2+
+- ArcGIS Field Maps (web and mobile applications)
 
 ### Instructions
 This repository requires the ArcGIS API for Python version 1.8.2 or greater to run. We recommend setting up your
@@ -16,7 +21,9 @@ local environment via Anaconda.
 
 ## Resources
 
+ * [ArcGIS Field Maps](https://www.esri.com/arcgis-blog/products/apps/field-mobility/introducing-arcgis-field-maps/)
  * [ArcGIS API for Python](https://developers.arcgis.com/python)
+
 
 ## Issues
 

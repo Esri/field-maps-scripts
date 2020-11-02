@@ -23,6 +23,8 @@ local environment via Anaconda.
 1. [Install Anaconda](https://developers.arcgis.com/python/guide/install-and-set-up/)
 2. Run `conda env create --file environment.yml` to create the virtual environment with the correct dependencies
 3. Run `conda activate field-maps-scripts` to activate the environment
+4. (Optional - dev only) Configure pre-commit to run flake8 linting on pushes
+   * `pre-commit install --hook-type pre-push`
 
 ## Resources
 

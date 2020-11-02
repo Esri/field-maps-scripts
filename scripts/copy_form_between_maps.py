@@ -143,3 +143,4 @@ if __name__ == "__main__":
         logging.getLogger().critical("Exception detected, script exiting")
         logging.getLogger().critical(e)
         logging.getLogger().critical(traceback.format_exc().replace("\n", " | "))
+

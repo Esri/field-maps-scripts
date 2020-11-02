@@ -79,16 +79,16 @@ def replace_form(source_objects, dest_objects, overwrite=False):
 def main(arguments):
     # initialize logger
     logger = initialize_logging(arguments.log_file)
-    
+
     # Create the GIS
     logger.info("Authenticating...")
-    
+
     # First step is to get authenticate and get a valid token
     gis = GIS(arguments.org_url,
               username=arguments.username,
               password=arguments.password,
               verify_cert=not arguments.skip_ssl_verification)
-    
+
     # Get the maps
     source_item = gis.content.get(arguments.source)
     dest_item = gis.content.get(arguments.dest)
@@ -96,7 +96,7 @@ def main(arguments):
         raise ValueError("Your source or destination map was not found! Please check your item ids again")
     if source_item.type.lower() != "web map" or dest_item.type.lower() != "web map":
         raise ValueError("One of the items you passed is not a webmap. Please check again.")
-    
+
     # Iterate through operational layers
     logger.info("Iterating through layers")
     source_layers = source_item.get_data().get("operationalLayers", [])
@@ -108,7 +108,7 @@ def main(arguments):
     # Swizzle in new form
     forms_modified = replace_form(source_layers, dest_layers, args.overwrite)
     tables_modified = replace_form(source_tables, dest_tables, args.overwrite)
-       
+
     # Saving form
     if forms_modified or tables_modified:
         logger.info("Saving form(s) to destination map")
@@ -128,7 +128,8 @@ if __name__ == "__main__":
     parser.add_argument('-source-map-id', dest='source', help="The item id of the map you want to copy the form(s) from",
                         required=True)
     parser.add_argument('-dest-map-id', dest='dest', help="The item id of the map you want to copy the form(s) to", required=True)
-    parser.add_argument('-layer-name', dest='layer_name', help="An optional specific layer you want to copy. If this is not provided, all matching layers will have their forms copied", required=False)
+    parser.add_argument('-layer-name', dest='layer_name', help="An optional specific layer you want to copy. If this is not provided, "
+                                                               "all matching layers will have their forms copied", required=False)
     parser.add_argument('--overwrite', dest='overwrite', action='store_true', help="Provide this parameter if you would like to overwrite an existing form")
     parser.add_argument('--skip-ssl-verification',
                         dest='skip_ssl_verification',

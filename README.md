@@ -6,7 +6,7 @@ A set of Python scripts and notebooks to help configure maps and manage data for
 #### Scripts
 | Functionality                                                        | Script                                                                            
 |----------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| [Copy Form Between Maps ](copy_form_between_maps.md)               | [copy_form_between_maps.py](scripts/copy_form_between_maps.py)              |
+| [Copy Form Between Maps ](readmes/copy_form_between_maps.md)               | [copy_form_between_maps.py](scripts/copy_form_between_maps.py)              |
 
 #### Notebooks
 [Add Field Maps App ID to ArcGIS Enterprise](notebooks/Add%20Field%20Maps%20App%20ID%20to%20ArcGIS%20Enterprise.ipynb)

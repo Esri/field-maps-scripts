@@ -10,6 +10,7 @@ A set of Python scripts and notebooks to help configure maps and manage data for
 
 #### Notebooks
 [Add Field Maps App ID to ArcGIS Enterprise](notebooks/Add%20Field%20Maps%20App%20ID%20to%20ArcGIS%20Enterprise.ipynb)
+[Bulk Update Maps for Use in Collector or Field Maps](notebooks/Bulk%20Update%20Maps%20for%20Use%20in%20Collector%20or%20Field%20Maps.ipynb)
 
 ### Requirements
 - Python 3.6+

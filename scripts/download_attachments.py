@@ -107,7 +107,8 @@ if __name__ == "__main__":
     # Parameters for workforce
     parser.add_argument('-item-id', dest='item_id', help="The item ID with the layer or table whose attachments you'd like to download")
     parser.add_argument('-layer-url', dest='layer_url', help="The feature layer url where you'd like to download attachments")
-    parser.add_argument('-out-folder', dest='out_folder', help="The path on your computer where you'd like to direct the attachments. If not passed, will download to present working directory", required=False, default="./attachments")
+    parser.add_argument('-out-folder', dest='out_folder', help="The path on your computer where you'd like to direct the attachments. If not passed, "
+                                                               "will download to present working directory", required=False, default="./attachments")
     parser.add_argument('-where', dest='where', help="If not passed, will download all attachments.", default='1=1')
     parser.add_argument('--skip-ssl-verification',
                         dest='skip_ssl_verification',

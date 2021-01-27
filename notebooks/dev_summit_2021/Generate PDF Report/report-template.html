@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}}</title>
+    <style type="text/css">
+        .summary-table td, th {
+          text-align: center;
+          vertical-align: middle;
+          width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center">{{ title }}</h1>
+
+    <div>
+        <h3>Summary Statistics</h3>
+        <table class="summary-table">
+            <tr>
+                <th>Tree Name</th><th>Count</th><th>Avg Age</th><th>Avg Height</th>
+            </tr>
+            {% for stat in statistics %}
+            <tr>
+                <td>{{ stat.NAME }}</td>
+                <td>{{ stat.count }}</td>
+                <td>{{ stat.avg_age }}</td>
+                <td>{{ stat.avg_height }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <p style="page-break-before: always" ></p>
+
+    <div>
+        <h3>Individual Trees</h3>
+
+        {% for feature in features %}
+        <div>
+            <div style="display:inline-block; vertical-align: top; width:50%">
+                <table>
+                    <tr><th>Attribute</th><th>Value</th></tr>
+                    <tr><td>Facility ID</td><td>{{ feature["attributes"]["FACILITYID"] }}</td></tr>
+                    <tr><td>Name</td><td>{{ feature["attributes"]["NAME"] }}</td></tr>
+                    <tr><td>Age</td><td>{{ feature["attributes"]["TREEAGE"] }}</td></tr>
+                    <tr><td>Height</td><td>{{ feature["attributes"]["HEIGHT"] }}</td></tr>
+                </table>
+            </div>
+            <div style="display:inline-block; width:49%">
+                <img style="width:100%" src="data:image/jpeg;base64,{{feature['map']}}"/>
+            </div>
+        </div>
+        <div>
+        <h5>Photos</h5>
+            {% for attachment in feature["attachments"] %}
+            <img style="width:200px" src="data:image/jpeg;base64,{{attachment}}"/>
+            {% endfor %}
+        </div>
+
+        <p style="page-break-before: always" ></p>
+        {% endfor %}
+
+    </div>
+</body>
+</html>

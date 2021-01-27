@@ -20,7 +20,7 @@
 
    limitations under the License.​
 
-    This sample copies a form from one map to another map if a matching layer is found
+    This sample downloads attachments to a local machine from a feature layer or table based on user input
 """
 import argparse
 import logging

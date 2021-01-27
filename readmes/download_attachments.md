@@ -12,8 +12,8 @@ Supports Python 3.6+
 
 In addition to the authentication arguments, the script specific arguments are as follows:
 
-- -item-id (Optional) - The item ID with the layer or table whose attachments you'd like to download
-- -layer-url (Optional) - The feature layer url where you'd like to download attachments
+- -item-id (Optional) - The item ID with the layer or table whose attachments you'd like to download. If an item has multiple layers / tables, it will attempt to download attachments for all layers / tables
+- -layer-url (Optional) - The feature layer url whose attachments you'd like to download
 - -out-folder (Optional)- The path on your computer where you'd like to direct the attachments. If not passed, will download to present working directory to a folder called "attachments"
 - -where (Optional) - The where clause that defines which features' attachments you'd like to download. If not passed, will download all attachments.
 - -log-file - The log file to use for logging messages (Optional)

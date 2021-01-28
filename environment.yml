@@ -3,8 +3,9 @@ channels:
   - esri
   - conda-forge
 dependencies:
-  - arcgis>=1.8.2
+  - arcgis>=1.8.4
   - pip>=19.1.1
   - python>=3.7.0
   - flake8>=3.8.3
   - pre-commit>=2.7.1
+  - qrcode=6.1.1

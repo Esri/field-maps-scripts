@@ -23,7 +23,7 @@
             </tr>
             {% for stat in statistics %}
             <tr>
-                <td>{{ stat.NAME }}</td>
+                <td style="text-align:left">{{ stat.NAME }}</td>
                 <td>{{ stat.count }}</td>
                 <td>{{ stat.avg_age }}</td>
                 <td>{{ stat.avg_height }}</td>
@@ -55,7 +55,7 @@
         <div>
         <h5>Photos</h5>
             {% for attachment in feature["attachments"] %}
-            <img style="width:200px" src="data:image/jpeg;base64,{{attachment}}"/>
+            <img style="width:300px" src="data:image/jpeg;base64,{{attachment}}"/>
             {% endfor %}
         </div>
 

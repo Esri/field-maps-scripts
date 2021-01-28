@@ -76,7 +76,10 @@ def main(arguments):
         raise Exception("Must pass either item id or layer url")
     if args.item_id:
         item = gis.content.get(args.item_id)
-        layers = item.layers + item.tables
+        if item:
+            layers = item.layers + item.tables
+        else:
+            raise Exception("Bad item id, please check again")
     else:
         layers = [FeatureLayer(url=args.layer_url, gis=gis)]
 

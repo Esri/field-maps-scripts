@@ -90,7 +90,7 @@ def main(arguments):
             found_attach = layer.attachments.search(args.where)
             for attach in found_attach:
                 try:
-                    layer.attachments.download(attachment_id=attach['ID'], save_path=args.out_folder)
+                    layer.attachments.download(attachment_id=attach['ID'], oid=attach['PARENTOBJECTID'], save_path=args.out_folder)
                 except Exception:
                     try:
                         print(f"Failed to download attachment {attach['NAME']} from object id {attach['PARENTOBJECTID']}'")

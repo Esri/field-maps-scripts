@@ -19,6 +19,7 @@ A set of Python scripts and notebooks to help configure maps and manage data for
 - [Generate PDF Report](notebooks/Generate%20PDF%20Report/Generate%20PDF%20Report.ipynb)
 - [Add GPS Metadata Fields (Pro)](notebooks/Add%20GPS%20Metadata%20Fields.ipynb)
 - [Add GPS Metadata Fields](notebooks/Add%20GPS%20Metadata%20Fields_FS.ipynb)
+- [Configure Search](notebooks/Configure%20Search.ipynb)
 
 ### Requirements
 

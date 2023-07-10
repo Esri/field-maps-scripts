@@ -21,6 +21,7 @@ A set of Python scripts and notebooks to help configure maps and manage data for
 - [Add GPS Metadata Fields](notebooks/Add%20GPS%20Metadata%20Fields_FS.ipynb)
 - [Configure Search](notebooks/Configure%20Search.ipynb)
 - [Location Sharing Status](notebooks/Location%20Sharing%20Status.ipynb)
+- [Create Offline Areas from Feature Layer](notebooks/Create%20Offline%20Areas%20from%20Feature%20Layer.ipynb)
 
 ### Requirements
 

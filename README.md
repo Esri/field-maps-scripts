@@ -25,6 +25,7 @@ A set of Python scripts and notebooks to help configure maps and manage data for
 - [Create Offline Areas from Feature Layer](notebooks/Create%20Offline%20Areas%20from%20Feature%20Layer.ipynb)
 - [Manage Map Areas with Group and Index](notebooks/Manage%20Map%20Areas%20with%20Group%20and%20Index.ipynb)
 - [Watermark photo attachments with Exif data](notebooks/Watermark%20photo%20attachments%20with%20Exif%20data.ipynb)
+- [Offline Checks](notebooks/Offline%20Checks.ipynb)
 
 ### Requirements
 

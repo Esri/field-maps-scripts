@@ -33,4 +33,3 @@ dependencies:
   - proj
   - weasyprint
   - conda-minify
-prefix: /Users/lau13820/miniconda3/envs/cartopy-dev

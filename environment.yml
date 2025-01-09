@@ -10,7 +10,6 @@ dependencies:
   - gdk-pixbuf>=2.42.2
   - jinja2>=2.11.2
   - pango>=1.42.4
-  - pillow>=8.0.1
   - pip>=19.1.1
   - python>=3.7.0
   - flake8>=3.8.3
@@ -18,3 +17,4 @@ dependencies:
   - qrcode>=6.1
   - pip:
       - WeasyPrint>=52.2
+      - pillow==9.4.0

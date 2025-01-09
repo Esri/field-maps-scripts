@@ -6,15 +6,19 @@ channels:
 dependencies:
   - arcgis=2.3.*
   - cairo>=1.16.0
-  - cartopy>=0.18.0
   - gdk-pixbuf>=2.42.2
   - jinja2>=2.11.2
   - pango>=1.42.4
   - pip>=19.1.1
+  - shapely[version='>=1.8']
   - python>=3.7.0
   - flake8>=3.8.3
+  - matplotlib-base==3.9.4
+  - pyshp[version='>=2.3']
   - pre-commit>=2.7.1
   - qrcode>=6.1
+  - WeasyPrint>=52.2
   - pip:
-      - WeasyPrint>=52.2
+      - pyproj==3.7.0
+      - cartopy>=0.18.0
       - pillow==9.4.0

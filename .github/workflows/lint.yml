@@ -9,7 +9,7 @@ jobs:
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
-        python-version: 3.7
+        python-version: 3.8.18
     - name: Setup flake8 annotations
       uses: rbialon/flake8-annotations@v1
     - name: Lint with flake8

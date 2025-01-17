@@ -1,19 +1,21 @@
 name: field-maps-scripts
 channels:
-  - esri
+  - Esri
+  - Esri/label/prerelease
   - conda-forge
 dependencies:
-  - arcgis>=1.8.4
+  - arcgis=2.3.*
   - cairo>=1.16.0
-  - cartopy>=0.18.0
   - gdk-pixbuf>=2.42.2
   - jinja2>=2.11.2
   - pango>=1.42.4
-  - pillow>=8.0.1
   - pip>=19.1.1
-  - python>=3.7.0
+  - python>=3.9.0
   - flake8>=3.8.3
   - pre-commit>=2.7.1
-  - qrcode=6.1
+  - qrcode>=6.1
+  - WeasyPrint>=52.2
   - pip:
-      - WeasyPrint>=52.2
+      - pyproj==3.7.0
+      - cartopy>=0.18.0
+      - pillow==9.4.0

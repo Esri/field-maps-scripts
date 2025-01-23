@@ -19,13 +19,13 @@
         <h3>Summary Statistics</h3>
         <table class="summary-table">
             <tr>
-                <th>Tree Name</th><th>Count</th><th>Avg Age</th><th>Avg Height</th>
+                <th>Tree Name</th><th>Count</th><th>Avg Diameter</th><th>Avg Height</th>
             </tr>
             {% for stat in statistics %}
             <tr>
-                <td style="text-align:left">{{ stat.NAME }}</td>
+                <td style="text-align:left">{{ stat.COMMONNAME }}</td>
                 <td>{{ stat.count }}</td>
-                <td>{{ stat.avg_age }}</td>
+                <td>{{ stat.avg_diameter }}</td>
                 <td>{{ stat.avg_height }}</td>
             </tr>
             {% endfor %}
@@ -42,10 +42,10 @@
             <div style="display:inline-block; vertical-align: top; width:50%">
                 <table>
                     <tr><th>Attribute</th><th>Value</th></tr>
-                    <tr><td>Facility ID</td><td>{{ feature["attributes"]["FACILITYID"] }}</td></tr>
-                    <tr><td>Name</td><td>{{ feature["attributes"]["NAME"] }}</td></tr>
-                    <tr><td>Age</td><td>{{ feature["attributes"]["TREEAGE"] }}</td></tr>
-                    <tr><td>Height</td><td>{{ feature["attributes"]["HEIGHT"] }}</td></tr>
+                    <tr><td>Tree ID</td><td>{{ feature["attributes"]["assetid"] }}</td></tr>
+                    <tr><td>Name</td><td>{{ feature["attributes"]["commonname"] }}</td></tr>
+                    <tr><td>Diameter</td><td>{{ feature["attributes"]["diameter"] }}</td></tr>
+                    <tr><td>Height</td><td>{{ feature["attributes"]["height"] }}</td></tr>
                 </table>
             </div>
             <div style="display:inline-block; width:49%">

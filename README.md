@@ -30,14 +30,14 @@ A set of Python scripts and notebooks to help configure maps and manage data for
 
 ### Requirements
 
-- ArcGIS API for Python 2.3.1
-- Python 3.9.x to 3.11.x is required to use the ArcGIS API for Python 2.3.1.
+- ArcGIS API for Python 2.4.x
+- Python 3.10.x to 3.13.x is required to use the ArcGIS API for Python 2.4.x
 - ArcGIS Field Maps (web and mobile applications)
 - ArcGIS Pro 2.9+ (Add `GPS Metadata Fields (Pro)` and `Add Offset Metadata Fields (Pro)` only)
 
 ### Instructions
 
-This repository recommends the ArcGIS API for Python version 2.3.1. We recommend setting up your
+This repository recommends the ArcGIS API for Python version 2.4.2. We recommend setting up your
 local environment via Anaconda.
 
 1. [Install Anaconda](https://developers.arcgis.com/python/guide/install-and-set-up/)

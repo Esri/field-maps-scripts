@@ -1,11 +1,14 @@
 name: workforce-tasks-migration
 channels:
-  - esri
   - conda-forge
+  - esri
   - defaults
 dependencies:
-  - python>=3.13
-  - pandas>=2.3
-  - gdal=3.11.*
-  - pip>=25.3
-      - arcgis=2.4.*
+  - python=3.11
+  - gdal>=3.6
+  - pandas>=2.0
+  - requests
+  - charset-normalizer
+  - pip
+  - pip:
+      - arcgis>=2.3

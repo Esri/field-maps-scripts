@@ -4,7 +4,7 @@ channels:
   - esri
   - defaults
 dependencies:
-  - python=3.11
+  - python=3.13
   - gdal>=3.6
   - pandas>=2.0
   - requests

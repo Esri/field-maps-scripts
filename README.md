@@ -27,6 +27,7 @@ A set of Python scripts and notebooks to help configure maps and manage data for
 - [Proxy Esri Basemaps for ArcGIS Enterprise Offline Map Areas](notebooks/Proxy%20Esri%20Basemaps%20for%20ArcGIS%20Enterprise%20Offline%20Map%20Areas.ipynb)
 - [Watermark photo attachments with Exif data](notebooks/Watermark%20photo%20attachments%20with%20Exif%20data.ipynb)
 - [Offline Checks](notebooks/Offline%20Checks.ipynb)
+- [Workforce Tasks Migration](notebooks/Workforce%20Tasks%20Migration)
 
 ### Requirements
 

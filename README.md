@@ -18,7 +18,6 @@ A set of Python scripts and notebooks to help configure maps and manage data for
 - [Field Apps Deployment Using Python](notebooks/Field%20Apps%20Deployment%20Using%20Python.ipynb)
 - [Generate PDF Report](notebooks/Generate%20PDF%20Report/Generate%20PDF%20Report.ipynb)
 - [Add GPS Metadata Fields (Pro)](notebooks/Add%20GPS%20Metadata%20Fields.ipynb)
-- [Add Offset Metadata Fields (Pro)](notebooks/Add%20Offset%20Metadata%20Fields.ipynb)
 - [Add GPS Metadata Fields](notebooks/Add%20GPS%20Metadata%20Fields_FS.ipynb)
 - [Configure Search](notebooks/Configure%20Search.ipynb)
 - [Location Sharing Status](notebooks/Location%20Sharing%20Status.ipynb)
@@ -65,7 +64,7 @@ Please see our [guidelines for contributing](https://github.com/esri/contributin
 
 ## Licensing
 
-Copyright 2022 Esri
+Copyright 2026 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
